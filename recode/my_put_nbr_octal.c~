@@ -1,0 +1,27 @@
+/*
+** EPITECH PROJECT, 2024
+** my_put_nbr_octal.c
+** File description:
+** into_to_oct
+*/
+
+int my_putchar(char c)
+{
+    write(1, &c, 1);
+}
+
+int my_put_nbr_octal(int nb)
+{
+    if (nb > 10) {
+	my_putnbr_octal(nb);
+	my_putchar(nb % 8 + '0');
+	return my_put_nbr_octal(nb / 8);
+    }
+    my_putchar(nb + '0');
+    return 0;
+}
+
+int main(int argc)
+{
+    my_put_nbr_octal(12);
+}
